@@ -2,11 +2,11 @@ function test() {
     return console.log('Hello, world!');
 }
 
+let computerSelection = 'undecided';                // create container for computers choice to sit in
+let playerSelection = 'undecided';
 
 function getComputerChoice() {
     let x = Math.floor(Math.random() * 3);              // generate random seed
-    let computerSelection = 'undecided';                // create container for computers choice to sit in
-
     switch (x) {                                        // map random seed to a meaningful result
         case 0: 
             computerSelection = 'rock';
@@ -23,16 +23,26 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
     const input = prompt("Rock, Paper, or Scissors?");  // get input prompt from player
-    let playerChoice = input.toLowerCase();             // convert input to lowercase for standardisation
+    let playerSelection = input.toLowerCase();             // convert input to lowercase for standardisation
 
-    if ((playerChoice === 'rock') || (playerChoice === 'scissors') || (playerChoice === 'paper')) {
-        return playerChoice;
+    if ((playerSelection === 'rock') || (playerSelection === 'scissors') || (playerSelection === 'paper')) {
+        return playerSelection;
     } else {
         alert('Try again');
     }                                                   // check if the input is a correct value, else reject input and prompt again
 }
 
-function playRound (playerSelection, computerSelection) {
+function playRound (playerSelection, computerSelection) {   // rock beats scissors, scissors beats paper, paper beats rock
 
+    let computerCapitalise = computerSelection.slice(0, 1).toUpperCase() + computerSelection.slice(1);
+    let playerCapitalise = playerSelection.slice(0, 1).toUpperCase() + playerSelection.slice(1);
+
+    if (playerSelection === computerSelection) {
+        return `Draw! Go again!`; 
+    } else if ((playerSelection === 'rock' && computerSelection === 'scissors') || (playerSelection === 'scissors' && computerSelection === 'paper') || (playerSelection === 'paper' && computerSelection === 'rock')) {
+        return `You Win! ${playerCapitalise} beats ${computerCapitalise}!`;
+    } else {
+        return `You Lose! ${computerCapitalise} beats ${playerCapitalise}!`;
+    }
 
 }
