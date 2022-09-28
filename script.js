@@ -34,15 +34,14 @@ function getPlayerChoice() {
 
 function playRound (playerSelection, computerSelection) {   // rock beats scissors, scissors beats paper, paper beats rock
 
-    let computerCapitalise = computerSelection.slice(0, 1).toUpperCase() + computerSelection.slice(1);
+    let computerCapitalise = computerSelection.slice(0, 1).toUpperCase() + computerSelection.slice(1);  // capitalise player and computer inputs for correct message output
     let playerCapitalise = playerSelection.slice(0, 1).toUpperCase() + playerSelection.slice(1);
 
-    if (playerSelection === computerSelection) {
+    if (playerSelection === computerSelection) {        // determine if the inputs result in a draw, win, or loss condition
         return `Draw! Go again!`; 
     } else if ((playerSelection === 'rock' && computerSelection === 'scissors') || (playerSelection === 'scissors' && computerSelection === 'paper') || (playerSelection === 'paper' && computerSelection === 'rock')) {
         return `You Win! ${playerCapitalise} beats ${computerCapitalise}!`;
     } else {
         return `You Lose! ${computerCapitalise} beats ${playerCapitalise}!`;
     }
-
 }
