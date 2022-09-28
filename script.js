@@ -43,6 +43,10 @@ function playRound (playerSelection, computerSelection) {   // rock beats scisso
     }
 }
 
-function playGame() {
-    
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = getPlayerChoice(); 
+        let computerSelection = getComputerChoice(); 
+        console.log(playRound(playerSelection, computerSelection));  
+    }
 }
