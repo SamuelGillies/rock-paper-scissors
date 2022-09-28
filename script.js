@@ -2,9 +2,6 @@ function test() {
     return console.log('Hello, world!');
 }
 
-let computerSelection = 'undecided';                // create container for computers choice to sit in
-let playerSelection = 'undecided';
-
 function getComputerChoice() {
     let x = Math.floor(Math.random() * 3);              // generate random seed
     switch (x) {                                        // map random seed to a meaningful result
@@ -44,4 +41,8 @@ function playRound (playerSelection, computerSelection) {   // rock beats scisso
     } else {
         return `You Lose! ${computerCapitalise} beats ${playerCapitalise}!`;
     }
+}
+
+function playGame() {
+    
 }
