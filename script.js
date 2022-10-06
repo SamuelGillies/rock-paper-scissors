@@ -42,7 +42,7 @@ function playRound (playerSelection, computerSelection) {   // rock beats scisso
         return `You Lose! ${computerCapitalise} beats ${playerCapitalise}!`;
     }
 }
-
+/*
 function game() {
     for (let i = 0; i < 5; i++) {
         let playerSelection = getPlayerChoice(); 
@@ -50,3 +50,4 @@ function game() {
         console.log(playRound(playerSelection, computerSelection));  
     }
 }
+*/
