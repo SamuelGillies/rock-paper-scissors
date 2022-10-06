@@ -4,27 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="stylesheet" src="/style.css"> 
+    <link rel="stylesheet" href="/style.css"/> 
     <script src="/script.js"></script>
     <title>Rock-Paper-Scissors</title>
 </head>
 
 <body>
-
-<button id="rock">Rock</button>
-<button id="paper">Paper</button>
-<button id="scissors">Scissors</button>
-
-<div id="results"></div>
-<div id="score"></div>
-
+    <div class="title">
+        <h1>Rock-Paper-Scissors</h1>
+        <h5>a game of chance against a random number generator</h5>
+    </div>
+    <div class="content">
+        <div class="player-choice">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
+        <div class="results">
+            <p id="gameover"></p>
+            <p id="outcome"></p>
+            <p id="score"></p>
+            <p id="funFact"></p>
+        </div>
+    </div>
 
     <script>
-
-    document.getElementById('rock').addEventListener('click', log => game('Rock')); 
-    document.getElementById('paper').addEventListener('click', log => game('Paper')); 
-    document.getElementById('scissors').addEventListener('click', log => game('Scissors')); 
-
+        document.getElementById('rock').addEventListener('click', log => game('Rock')); 
+        document.getElementById('paper').addEventListener('click', log => game('Paper')); 
+        document.getElementById('scissors').addEventListener('click', log => game('Scissors')); 
     </script>
 
 </body>
