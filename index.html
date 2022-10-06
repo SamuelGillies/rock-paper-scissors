@@ -15,16 +15,17 @@
 <button id="paper">Paper</button>
 <button id="scissors">Scissors</button>
 
+<div id="results"></div>
+<div id="score"></div>
 
 
     <script>
 
-    document.getElementById('rock').addEventListener('click', log => getPlayerChoice('rock')); 
-    document.getElementById('paper').addEventListener('click', log => getPlayerChoice('paper')); 
-    document.getElementById('scissors').addEventListener('click', log => getPlayerChoice('scissors')); 
+    document.getElementById('rock').addEventListener('click', log => game('Rock')); 
+    document.getElementById('paper').addEventListener('click', log => game('Paper')); 
+    document.getElementById('scissors').addEventListener('click', log => game('Scissors')); 
 
-
-    //   game();
     </script>
+
 </body>
 </html>

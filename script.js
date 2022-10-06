@@ -1,50 +1,51 @@
-function test() {
-    return console.log('Hello, world!');
-}
+let i = 0;
+let j = 0;
 
 function getComputerChoice() {
     let x = Math.floor(Math.random() * 3);              // generate random seed
     switch (x) {                                        // map random seed to a meaningful result
         case 0: 
-            computerSelection = 'rock';
+            computerSelection = 'Rock';
             break;
         case 1: 
-            computerSelection = 'paper'; 
+            computerSelection = 'Paper'; 
             break;
         case 2: 
-            computerSelection = 'scissors'; 
+            computerSelection = 'Scissors'; 
             break;
     }
     return computerSelection;                           // return computer selection after result has been determined
 }
 
-
-
-function getPlayerChoice(input) {
-
-    let playerSelection = input;                        // take input of buttons and assign to playerSelection according to selection
-    console.log(playerSelection);
-}
-
 function playRound (playerSelection, computerSelection) {   // rock beats scissors, scissors beats paper, paper beats rock
 
-    let computerCapitalise = computerSelection.slice(0, 1).toUpperCase() + computerSelection.slice(1);  // capitalise player and computer inputs for correct message output
-    let playerCapitalise = playerSelection.slice(0, 1).toUpperCase() + playerSelection.slice(1);
-
-    if (playerSelection === computerSelection) {        // determine if the inputs result in a draw, win, or loss condition
+    if (playerSelection === computerSelection) {        // determine if the inputs result in a draw, win, or loss condition 
         return `Draw! Go again!`; 
-    } else if ((playerSelection === 'rock' && computerSelection === 'scissors') || (playerSelection === 'scissors' && computerSelection === 'paper') || (playerSelection === 'paper' && computerSelection === 'rock')) {
-        return `You Win! ${playerCapitalise} beats ${computerCapitalise}!`;
+    } else if ((playerSelection === 'Rock' && computerSelection === 'Scissors') || (playerSelection === 'Scissors' && computerSelection === 'Paper') || (playerSelection === 'Paper' && computerSelection === 'Rock')) {
+        i++;
+        return `You Win! ${playerSelection} beats ${computerSelection}!`;
     } else {
-        return `You Lose! ${computerCapitalise} beats ${playerCapitalise}!`;
+        j++;
+        return `You Lose! ${computerSelection} beats ${playerSelection}!`;
     }
 }
-/*
-function game() {
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = getPlayerChoice(); 
-        let computerSelection = getComputerChoice(); 
-        console.log(playRound(playerSelection, computerSelection));  
+
+function game(input) {
+    let playerSelection = input;                        // playerSelection set to input on button selection in DOM
+    let computerSelection = getComputerChoice(); 
+    results.textContent = playRound(playerSelection, computerSelection);  // print return value of playRound to DOM
+
+    if (i >= 5) {                                       // after 5 games print results and score to DOM 
+        results.textContent = 'GAME OVER! Player Wins! Would you like to play again?';
+        score.textContent = (`${i} vs ${j}`);  
+        i = 0;
+        j = 0;
+    } else if (j >= 5) {
+        results.textContent = 'GAME OVER! Computer Wins! Would you like to play again?';
+        score.textContent = (`${i} vs ${j}`);  
+        i = 0;
+        j = 0;
+    } else {
+    score.textContent = (`${i} vs ${j}`);  
     }
 }
-*/
