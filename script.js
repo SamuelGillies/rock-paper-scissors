@@ -18,15 +18,12 @@ function getComputerChoice() {
     return computerSelection;                           // return computer selection after result has been determined
 }
 
-function getPlayerChoice() {
-    const input = prompt("Rock, Paper, or Scissors?");  // get input prompt from player
-    let playerSelection = input.toLowerCase();             // convert input to lowercase for standardisation
 
-    if ((playerSelection === 'rock') || (playerSelection === 'scissors') || (playerSelection === 'paper')) {
-        return playerSelection;
-    } else {
-        alert('Try again');
-    }                                                   // check if the input is a correct value, else reject input and prompt again
+
+function getPlayerChoice(input) {
+
+    let playerSelection = input;                        // take input of buttons and assign to playerSelection according to selection
+    console.log(playerSelection);
 }
 
 function playRound (playerSelection, computerSelection) {   // rock beats scissors, scissors beats paper, paper beats rock
